@@ -1,0 +1,144 @@
+$color_black1: #202328
+$color_black2: #1f2227
+$color_black3: #272d35
+$color_black4: #111419
+$color_white: #ffffff
+$color_green: #1f2227
+$color_red: #ef3f40
+$color_grey1: #555d69
+$color_grey2: #4f5661
+
+$mobile: "(max-width: 767.98px)"
+$tablet: "(min-width: 768px) and (max-width: 991.98px)"
+$desktop: "(min-width: 992px)"
+
+*
+  margin: 0
+  padding: 0
+
+section, div, li
+  box-sizing: border-box
+
+img 
+  max-width: 100%
+
+.chat-wrapper
+  background: $color_black4
+  padding: 20px 60px
+  height: 100vh
+  box-sizing: border-box;
+
+  @media #{$tablet}
+    padding: 20px
+  
+  @media #{$mobile}
+    padding: 20px
+
+.chat
+  display: flex
+  flex-direction: row
+  .simplebar-scrollbar:before
+    background: $color_red
+
+.chat-tabs
+  display: flex
+  flex-direction: column
+  width: 30%
+  max-width: 400px
+  padding-right: 10px
+
+  @media #{$mobile}
+     width: 90px
+
+  &__header
+    display: flex
+    height: 55px
+    align-items: center
+    padding: 0 15px
+
+    &_people 
+      @media #{$mobile}
+        padding: 0 30px 0 10px;
+
+    @media #{$mobile}
+      justify-content: center;
+
+    &_messages 
+      border-bottom: 1px solid $color_black3
+
+  &__icon 
+    height: 22px
+    line-height: 22px
+    font-size: 0
+    margin-right: 15px
+
+    @media #{$mobile}
+      margin-right: 0
+
+    img
+      height: 22px
+
+  &__title
+    color: $color_white
+    font-family: Arial
+    font-size: 17px
+    font-weight: 400
+    line-height: 22px
+
+    @media #{$mobile}
+      display: none
+
+  &__list
+    list-style-type: none
+    padding-right: 15px
+    height: calc(100vh - 95px)
+
+  &__tab
+    display: flex
+    flex-direction: row
+    align-items: center
+    background-color: #202328
+    margin: 0 0 12px
+    padding: 10px
+
+    @media #{$mobile}
+      width: 60px
+      height: 60px
+
+  &__avatar 
+    @media #{$desktop}
+      width: 60px
+      height: 60px
+      margin-right: 20px
+
+    @media #{$tablet}
+      width: 45px
+      height: 45px
+      margin-right: 10px
+
+  &__nickname
+    color: $color_white
+    font-family: Arial
+    font-size: 16px
+    font-weight: 400
+    line-height: 22px
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    max-width: calc( 100% -  80px)
+
+    @media #{$tablet}
+      font-size: 13px
+      max-width: calc( 100% -  55px)
+    
+    @media #{$mobile}
+      display: none
+    
+.chat-messages 
+  width: 70%
+  max-width: 1290px
+  height: calc(100vh - 40px)
+  background: $color_black1
+
+  @media #{$mobile}
+    width: calc(100% - 80px)
