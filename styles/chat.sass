@@ -3,10 +3,13 @@ $color_black2: #1f2227
 $color_black3: #272d35
 $color_black4: #111419
 $color_white: #ffffff
-$color_green: #1f2227
+$color_green: #679147
 $color_red: #ef3f40
 $color_grey1: #555d69
 $color_grey2: #4f5661
+$color_grey3: #34373d
+$color_grey4: #454950
+$color_grey5: #8c8f95
 
 $mobile: "(max-width: 767.98px)"
 $tablet: "(min-width: 768px) and (max-width: 991.98px)"
@@ -48,7 +51,8 @@ img
   padding-right: 10px
 
   @media #{$mobile}
-     width: 90px
+    width: 80px
+    padding-right: 0
 
   &__header
     display: flex
@@ -56,12 +60,15 @@ img
     align-items: center
     padding: 0 15px
 
+    @media #{$mobile}
+      height: 45px
+
     &_people 
       @media #{$mobile}
-        padding: 0 30px 0 10px;
+        padding: 0px 20px 0 10px
 
     @media #{$mobile}
-      justify-content: center;
+      justify-content: center
 
     &_messages 
       border-bottom: 1px solid $color_black3
@@ -97,15 +104,90 @@ img
     display: flex
     flex-direction: row
     align-items: center
-    background-color: #202328
+    background-color: $color_black1
     margin: 0 0 12px
     padding: 10px
+    text-decoration: none
 
     @media #{$mobile}
-      width: 60px
-      height: 60px
+      width: 50px
+      height: 50px
+      padding: 5px
+    
+    &.new_message
+      position: relative
+
+      &:after
+        content: "NEW"
+        position: absolute
+        width: 47px
+        height: 16px
+        text-align: center
+        line-height: 16px
+        font-size: 11px
+        background: $color_red
+        font-family: Arial
+        color: $color_white
+        border-radius: 8px
+        top: 10px
+        right: 20px
+
+        @media #{$tablet}
+          width: 37px
+          height: 14px
+          line-height: 14px
+          font-size: 9px
+          top: 5px
+          right: 5px
+
+        @media #{$mobile}
+          width: 37px
+          height: 14px
+          line-height: 14px
+          font-size: 9px
+          top: 0
+          right: 0
+    
+    &.active,
+    &:hover
+      background-color: $color_grey3
+      position: relative
+
+    &.active
+      &:before 
+        content: ""
+        width: 12px
+        height: 28px
+        background-image: url(../images/icons/tab_active.svg)
+        background-size: contain
+        background-repeat: no-repeat
+        position: absolute
+        right: -12px
+        top: 50%
+        transform: translateY(-50%)
+
+        @media #{$mobile}
+          width: 8px
+          height: 20px
+          right: -8px
 
   &__avatar 
+    font-size: 0
+
+    &.online 
+      position: relative
+
+      &:after
+        content: ""
+        position: absolute
+        bottom: -5px
+        right: -5px
+        display: block
+        width: 10px
+        height: 10px
+        border-radius: 50%
+        background: $color_green
+
     @media #{$desktop}
       width: 60px
       height: 60px
@@ -135,10 +217,129 @@ img
       display: none
     
 .chat-messages 
+  display: flex
+  flex-direction: column
   width: 70%
   max-width: 1290px
   height: calc(100vh - 40px)
   background: $color_black1
 
+  @media #{$desktop}
+    width: 75%
+
   @media #{$mobile}
     width: calc(100% - 80px)
+  
+  &__content 
+    display: flex
+    flex-direction: column
+    height: calc(100vh - 250px)
+    padding: 10px 50px
+
+  &__empty 
+    display: flex
+    align-self: center
+    margin: auto
+    color: $color_white
+    font-family: Arial
+    font-size: 17px
+    font-weight: 400
+
+  &__form
+    padding: 40px 50px
+
+.chat-row
+  &_own
+    text-align: right
+
+.chat-bubble
+  display: inline-block
+  text-align: left
+  width: auto
+  background: $color_grey3
+  border-radius: 10px
+  margin: 10px 0
+  width: auto
+  padding: 13px 18px
+  position: relative
+
+  &::before
+    content: ""
+    background-image: url(../images/icons/message_left.svg)
+    background-repeat: no-repeat
+    display: block
+    position: absolute
+    width: 20px
+    height: 18px
+    left: -20px
+    bottom: 15px
+
+  &_own
+    background: $color_grey4
+
+    &::before
+      background-image: url(../images/icons/message_right.svg)
+      left: auto
+      right: -20px
+
+  &__header
+    padding: 0 0 5px
+    color: $color_grey5
+    font-family: Arial
+    font-size: 16px
+    font-weight: 400
+
+  &__text
+    color: $color_white
+    font-family: Arial
+    font-size: 17px
+    font-weight: 400
+
+    a 
+      color: #bbc7e0
+      font-family: Arial
+      font-style: italic
+      text-decoration: underline
+
+.chat-form
+  width: 100%
+  position: ralative
+
+  &__row
+    display: block
+    position: relative
+    width: 100%
+    height: 67px
+    border-radius: 10px
+    background-color: #111419
+
+  &__textarea
+    width: calc( 100% -  100px)
+    height: 67px
+    resize: none
+    border: none
+    background-color: #111419
+    color: $color_white
+    font-family: Arial
+    font-size: 17px
+    font-weight: 400
+    outline: none !important
+    padding: 10px
+    border-radius: 10px
+    box-sizing: border-box
+
+  &__button
+    position: absolute
+    top: 50%
+    right: 25px
+    transform: translateY(-50%)
+    width: 45px
+    height: 45px
+    background-color: #454950
+    border: 0
+    border-radius: 50%
+    outline: none !important
+
+    &:hover
+      cursor: pointer
+      background-color: $color_grey1
