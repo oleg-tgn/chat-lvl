@@ -331,6 +331,13 @@ img {
   padding: 10px 50px;
 }
 
+@media (max-width: 767.98px) {
+  .chat-messages__content {
+    height: calc(100vh - 200px);
+    padding: 10px 20px;
+  }
+}
+
 .chat-messages__empty {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -346,6 +353,12 @@ img {
 
 .chat-messages__form {
   padding: 40px 50px;
+}
+
+@media (max-width: 767.98px) {
+  .chat-messages__form {
+    padding: 20px 20px;
+  }
 }
 
 .chat-row_own {
@@ -364,6 +377,12 @@ img {
   position: relative;
 }
 
+@media (max-width: 767.98px) {
+  .chat-bubble {
+    padding: 8px 20px;
+  }
+}
+
 .chat-bubble::before {
   content: "";
   background-image: url(../images/icons/message_left.svg);
@@ -374,6 +393,12 @@ img {
   height: 18px;
   left: -20px;
   bottom: 15px;
+}
+
+@media (max-width: 767.98px) {
+  .chat-bubble::before {
+    height: 10px;
+  }
 }
 
 .chat-bubble_own {
@@ -387,11 +412,29 @@ img {
 }
 
 .chat-bubble__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0 0 5px;
   color: #8c8f95;
   font-family: Arial;
   font-size: 16px;
   font-weight: 400;
+  min-width: 330px;
+}
+
+@media (max-width: 767.98px) {
+  .chat-bubble__header {
+    font-size: 12px;
+    min-width: 0;
+  }
 }
 
 .chat-bubble__text {
@@ -401,11 +444,52 @@ img {
   font-weight: 400;
 }
 
+@media (max-width: 767.98px) {
+  .chat-bubble__text {
+    font-size: 12px;
+  }
+}
+
 .chat-bubble__text a {
   color: #bbc7e0;
   font-family: Arial;
   font-style: italic;
   text-decoration: underline;
+}
+
+.chat-bubble__complaint {
+  width: 50px;
+  top: 10px;
+  right: 20px;
+  position: absolute;
+  background-image: url(../images/icons/warning.svg);
+}
+
+.chat-bubble__complaint::before {
+  content: "";
+  display: block;
+  width: 13px;
+  height: 13px;
+  background-color: #595c63;
+  border-radius: 50%;
+  background-image: url(../images/icons/warning.svg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.chat-bubble__complaint:hover a {
+  display: block;
+}
+
+.chat-bubble__complaint a {
+  display: none;
+  left: 50%;
+  margin-top: 20px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .chat-form {
@@ -439,6 +523,12 @@ img {
           box-sizing: border-box;
 }
 
+@media (max-width: 767.98px) {
+  .chat-form__textarea {
+    font-size: 12px;
+  }
+}
+
 .chat-form__button {
   position: absolute;
   top: 50%;
@@ -453,8 +543,92 @@ img {
   outline: none !important;
 }
 
+.chat-form__button::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: url(../images/icons/send.png);
+}
+
 .chat-form__button:hover {
   cursor: pointer;
   background-color: #555d69;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 767.98px) {
+  .tooltip {
+    margin: 0 10px;
+  }
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip__warning {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  color: #202328;
+  background: #595c63;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #111419;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 12px;
+  position: absolute;
+  z-index: 1;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 400;
+  width: 100px;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media (max-width: 767.98px) {
+  .tooltip .tooltiptext {
+    width: 85px;
+    top: 130%;
+    font-size: 10px;
+  }
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #111419 transparent;
 }
 /*# sourceMappingURL=chat.css.map */

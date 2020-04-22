@@ -18,7 +18,7 @@
                 <div class="chat-tabs__header chat-tabs__header_people">
                     <!--TODO: нужна векторная иконка-->
                     <span class="chat-tabs__icon">
-                        <img src="images/dialog.png" alt="">
+                        <img src="images/icons/user.svg" alt="">
                     </span>
                     <span class="chat-tabs__title">
                         Диалоги
@@ -237,17 +237,21 @@
                 <div class="chat-tabs__header chat-tabs__header_messages">
                     <!--TODO: нужна векторная иконка-->
                     <span class="chat-tabs__icon">
-                        <img src="images/message.png" alt="">
+                        <img src="images/icons/message.svg" alt="">
                     </span>
                     <span class="chat-tabs__title">
                         Сообщения
                     </span>
                 </div>
-                <div class="chat-messages__content js-scrollbar" id="js-scroll-it-down">
+                <div class="chat-messages__content js-scrollbar-bottom">
                     <div class="chat-row">
                         <div class="chat-bubble">
                             <div class="chat-bubble__header">
                                 Sad bird noises*  17.04.2020
+                                <div class="tooltip">
+                                    <i class="tooltip__warning">!</i>
+                                    <a href="#" class="tooltiptext">Пожаловаться</a>
+                                </div>
                             </div>
                             <div class="chat-bubble__text">
                                 Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Гедонизм осмысляет дедуктивный метод. 
@@ -260,6 +264,10 @@
                         <div class="chat-bubble">
                             <div class="chat-bubble__header">
                                 Sad bird noises*  17.04.2020
+                                <div class="tooltip">
+                                    <i class="tooltip__warning">!</i>
+                                    <a href="#" class="tooltiptext">Пожаловаться</a>
+                                </div>
                             </div>
                             <div class="chat-bubble__text">
                                 Ок да?
@@ -280,6 +288,10 @@
                         <div class="chat-bubble">
                             <div class="chat-bubble__header">
                                 Sad bird noises*  18:15
+                                <div class="tooltip">
+                                    <i class="tooltip__warning">!</i>
+                                    <a href="#" class="tooltiptext">Пожаловаться</a>
+                                </div>
                             </div>
                             <div class="chat-bubble__text">
                                 Качай новый крутой чит <a href="http://invalidy.club" target="_blank">http://invalidy.club</a> без регистрации и смс!
@@ -290,6 +302,10 @@
                         <div class="chat-bubble">
                             <div class="chat-bubble__header">
                                 Sad bird noises*  17.04.2020
+                                <div class="tooltip">
+                                    <i class="tooltip__warning">!</i>
+                                    <a href="#" class="tooltiptext">Пожаловаться</a>
+                                </div>
                             </div>
                             <div class="chat-bubble__text">
                                 Наряду с этим ощущение мира решительно контролирует непредвиденный гравитационный парадокс. Гедонизм осмысляет дедуктивный метод. 
@@ -302,6 +318,10 @@
                         <div class="chat-bubble">
                             <div class="chat-bubble__header">
                                 Sad bird noises*  17.04.2020
+                                <div class="tooltip">
+                                    <i class="tooltip__warning">!</i>
+                                    <a href="#" class="tooltiptext">Пожаловаться</a>
+                                </div>
                             </div>
                             <div class="chat-bubble__text">
                                 Ок да?
@@ -322,6 +342,10 @@
                         <div class="chat-bubble">
                             <div class="chat-bubble__header">
                                 Sad bird noises*  18:15
+                                <div class="tooltip">
+                                    <i class="tooltip__warning">!</i>
+                                    <a href="#" class="tooltiptext">Пожаловаться</a>
+                                </div>
                             </div>
                             <div class="chat-bubble__text">
                                 Качай новый крутой чит <a href="http://invalidy.club" target="_blank">http://invalidy.club</a> без регистрации и смс!
@@ -334,7 +358,7 @@
                         <div class="chat-form__row">
                             <textarea type="text" class="chat-form__textarea js-scrollbar"
                             data-simplebar data-simplebar-auto-hide="false"></textarea>
-                            <button class="chat-form__button">+</button>
+                            <button class="chat-form__button"></button>
                         </div>
                     </form>
                 </div>
@@ -351,12 +375,12 @@
                  }
             }); 
             /*по умолчанию прокручиваем до последнего сообщения в диалоге*/
-            messages = OverlayScrollbars(document.getElementById('js-scroll-it-down'), { 
+            messages = OverlayScrollbars(document.getElementsByClassName('js-scrollbar-bottom'), { 
                  scrollbars : {
                      autoHide : "leave"
                  }
             }); 
-            messages.scroll([ 0, "100%" ], 0);
+            //messages.scroll([ 0, "100%" ], 0);
         });
     </script>
 </body>
