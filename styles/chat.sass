@@ -265,18 +265,18 @@ img
     width: 75%
 
   @media #{$mobile}
-    width: calc(100% - 80px)
+    width: calc(100% - 60px)
     height: calc(100vh - 60px)
   
   &__content 
     display: flex
     flex-direction: column
-    height: calc(100vh - 351px)
-    padding: 10px 50px
+    height: calc(100vh - 230px)
+    padding: 0 50px
 
     @media #{$mobile}
-      height: calc(100vh - 201px)
-      padding: 10px 20px
+      height: calc(100vh - 150px)
+      padding: 0 20px
 
   &__empty 
     display: flex
@@ -288,7 +288,7 @@ img
     font-weight: 400
 
   &__form
-    padding: 40px 50px
+    padding: 20px 50px
 
     @media #{$mobile}
       padding: 20px 20px
@@ -303,13 +303,14 @@ img
   width: auto
   background: $color_grey3
   border-radius: 10px
-  margin: 10px 0
+  margin: 20px 0 0
   width: auto
   padding: 13px 18px
   position: relative
 
   @media #{$mobile}
-    padding: 8px 20px
+    margin: 5px 0
+    padding: 10px
 
   &::before
     content: ""
@@ -393,7 +394,6 @@ img
       margin-top: 20px
       transform: translateX(-50%)
 
-
 .chat-form
   width: 100%
   position: ralative
@@ -402,13 +402,17 @@ img
     display: block
     position: relative
     width: 100%
-    height: 67px
+    height: 50px
+    padding: 15px 20px
     border-radius: 10px
     background-color: #111419
 
+    @media #{$mobile}
+      height: 47px
+
   &__textarea
-    width: calc( 100% -  100px)
-    height: 67px
+    width: calc(100% - 45px)
+    height: 20px
     resize: none
     border: none
     background-color: #111419
@@ -417,39 +421,50 @@ img
     font-size: 17px
     font-weight: 400
     outline: none !important
-    padding: 10px
-    border-radius: 10px
+    padding: 0
     box-sizing: border-box
+    
 
     @media #{$mobile}
+      width: calc(100% -  50px)
       font-size: 12px
+      height: 20px
 
   &__button
     position: absolute
     top: 50%
     right: 25px
     transform: translateY(-50%)
-    width: 45px
-    height: 45px
+    width: 30px
+    height: 30px
     background-color: #454950
     border: 0
     border-radius: 50%
     outline: none !important
 
+    @media #{$mobile}
+      right: 15px
+      width: 30px
+      height: 30px
+
     &::after
       content: ""
       position: absolute
-      width: 24px
-      height: 24px
+      width: 15px
+      height: 15px
       left: 50%
       top: 50%
       transform: translate(-50%, -50%)
       background: url(../images/icons/send.png)
+      background-size: contain 
+      
+      @media #{$mobile}
+        width: 15px
+        height: 15px
 
     &:hover
       cursor: pointer
       background-color: $color_grey1
-
 
 .tooltip
   position: relative
