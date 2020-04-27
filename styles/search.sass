@@ -1,0 +1,264 @@
+$color_black1: #202328
+$color_black2: #1f2227
+$color_black3: #272d35
+$color_black4: #111419
+$color_white: #ffffff
+$color_green: #679147
+$color_red: #ef3f40
+$color_grey1: #555d69
+$color_grey2: #4f5661
+$color_grey3: #34373d
+$color_grey4: #454950
+$color_grey5: #8c8f95
+
+$mobile: "(max-width: 767.98px)"
+$tablet: "(min-width: 768px) and (max-width: 991.98px)"
+$desktop: "(min-width: 992px)"
+
+/*Custom Range Slider*/
+.irs-min,
+.irs-max
+  display: none
+
+.irs--round .irs-line,
+.irs--round .irs-bar
+  height: 7px
+
+.irs--round .irs-bar
+  background-color: #616263
+  background-image: linear-gradient(to right, #6c52b4 0%, #9a4d9a 100%)
+
+.irs--round .irs-handle
+  top: 30px
+  border: 0
+  width: 18px
+  height: 18px
+
+.irs--round
+  height: 85px;
+
+  .irs-from,
+  .irs-to,
+  .irs-single
+    top: auto
+    bottom: -70px
+    font-size: 12px
+    background-color: #616263
+
+    &:before
+      border-top-color:  #111419
+      border-bottom-color: #616263
+      bottom: auto
+      top: -6px
+
+.search-players-wrapper
+  padding: 20px
+
+.search-bar
+  width: 30%
+  max-width: 372px
+
+  @media #{$mobile}
+    width: 100%
+
+.search-form
+  &__row
+    position: relative
+    border-bottom: 1px solid #2d2e33
+    padding: 15px 0 0 0
+
+    @media #{$mobile}
+      padding: 5px 0
+
+  &__rules
+    padding: 25px 0
+
+  &__label
+    color: #6b6c6c
+    font-family: Arial
+    font-size: 15px
+    font-weight: 400
+    
+    @media #{$mobile}
+      display: block
+      height: 30px
+      line-height: 30px
+
+  &__button
+    border: 0
+    color: #ffffff
+    font-family: Arial
+    font-size: 15px
+    font-weight: 600
+    width: 170px
+    height: 42px
+    box-shadow: 0 4px 0 #503588
+    border-radius: 21px
+    background-color: #7051b2
+    text-transform: uppercase
+    cursor: pointer
+    margin: 15px
+    outline: none
+
+    @media #{$mobile}
+      margin: 15px auto
+      display: block
+
+    &:hover 
+      background-color: rgba(112, 81, 178, 0.5)
+
+  &__clear
+    color: #8b8b8b
+    font-family: Arial
+    font-size: 11px
+    font-weight: 400
+    width: 93px
+    height: 21px
+    border-radius: 10px
+    background: #111419
+    border: 2px solid #2d2e33
+    text-transform: uppercase
+    cursor: pointer
+    outline: none
+
+    @media #{$mobile}
+      margin: 0 auto
+      display: block
+
+    &:hover 
+      background-color: rgba(0, 0, 0, 0.5)
+
+/*custom checkbox circle*/
+.checkbox-wrap
+  display: flex;
+  flex-wrap: wrap;
+
+.checkbox-circle 
+  margin-bottom: 0.2em
+
+.custom-checkbox-circle
+  margin: 15px 0
+  width: 124px
+  cursor: pointer
+
+  @media #{$tablet}
+    margin: 3px 0
+    width: 100%
+  
+  @media #{$mobile}
+     width: 50%
+
+  & > input
+    position: absolute
+    z-index: -1
+    opacity: 0
+
+  & > span
+    display: inline-flex
+    align-items: center
+    user-select: none
+    color: #ffffff
+    font-family: Arial 
+    font-size: 15px
+
+    @media #{$tablet}
+      font-size: 12px
+
+  & > span::before
+    content: ''
+    display: inline-block
+    width: 13px
+    height: 13px
+    flex-shrink: 0
+    flex-grow: 0
+    border: 1px solid #ffffff
+    border-radius: 50%
+    margin-right: 5px
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: 50% 50%
+
+  & > input:not(:disabled):active + span::before
+    background-color: #f772d1
+    border-color: #ffffff
+
+  & > input:focus+span::before
+    box-shadow: 0 0 0 0.2rem rgba(152, 78, 156, 0.25)
+    
+  & > input:focus:not(:checked)+span::before
+    border-color: #f772d1
+
+  & > input:checked+span::before
+    border-color: #ffffff
+    background: linear-gradient(45deg, #f772d1 0%, #6c52b5 100%)
+
+  & > input:disabled+span::before 
+    background-color: #e9ecef
+
+/*images checkbox*/
+.checkbox-images-wrap
+  display: flex
+  flex-wrap: wrap
+  margin: 15px 0
+
+.custom-checkbox-image
+  width: 60px
+  padding-right: 9px
+  margin: 8px 0
+  box-sizing: border-box
+  cursor: pointer
+
+  @media #{$tablet}
+    margin: 4px 0
+    width: calc(100% / 3)
+  
+  @media #{$mobile}
+    margin: 4px 0
+    width: calc(100% / 4)
+
+  & > input
+    position: absolute
+    z-index: -1
+    opacity: 0
+
+  & span
+    display: inline-flex
+    position: relative
+
+  & > input:checked+span::after
+    content: ""
+    display: block
+    position: absolute
+    width: 100%
+    height: 90%
+    top: 10%
+    left: 0
+    background: linear-gradient(to top, rgba(153, 77, 155, 1), rgba(153, 77, 155, 0))
+
+/*this class toggle elements on on mobile*/
+@media #{$mobile}
+  .toggle-body 
+      display: none
+
+  .toggle-title
+    position: relative
+    cursor: pointer
+
+    &:hover:before
+      transform: translateY(1px)
+
+    &:before
+      position: absolute
+      content: ''
+      right: 0
+      top: 0
+      width: 30px
+      height: 100%
+      background: url(../images/icons/keyboard-arrow-down_117120.svg) no-repeat center center
+      cursor: pointer
+      transition: .2s
+      transition-timing-function: ease-in-out
+
+    &.open:before
+      transform: rotate(180deg)
+        
