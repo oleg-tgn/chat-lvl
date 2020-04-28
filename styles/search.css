@@ -4,6 +4,10 @@
   display: none;
 }
 
+.irs--round {
+  height: 85px;
+}
+
 .irs--round .irs-line,
 .irs--round .irs-bar {
   height: 7px;
@@ -20,10 +24,6 @@
   border: 0;
   width: 18px;
   height: 18px;
-}
-
-.irs--round {
-  height: 85px;
 }
 
 .irs--round .irs-from,
@@ -45,7 +45,7 @@
 }
 
 .search-players-wrapper {
-  padding: 20px;
+  padding: 25px;
 }
 
 .search-bar {
@@ -72,7 +72,13 @@
 }
 
 .search-form__rules {
-  padding: 25px 0;
+  margin: 25px 0;
+}
+
+@media (max-width: 767.98px) {
+  .search-form__rules {
+    margin: 15px 0;
+  }
 }
 
 .search-form__label {
@@ -108,10 +114,19 @@
   outline: none;
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .search-form__button {
+    display: block;
+    margin: 15px auto;
+  }
+}
+
 @media (max-width: 767.98px) {
   .search-form__button {
-    margin: 15px auto;
-    display: block;
+    width: 130px;
+    height: 30px;
+    font-size: 13px;
+    margin: 0 15px;
   }
 }
 
@@ -134,10 +149,10 @@
   outline: none;
 }
 
-@media (max-width: 767.98px) {
+@media (min-width: 768px) and (max-width: 991.98px) {
   .search-form__clear {
-    margin: 0 auto;
     display: block;
+    margin: 0 auto;
   }
 }
 
@@ -152,6 +167,12 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .checkbox-wrap {
+    margin: 10px 0;
+  }
 }
 
 .checkbox-circle {
@@ -174,6 +195,7 @@
 @media (max-width: 767.98px) {
   .custom-checkbox-circle {
     width: 50%;
+    margin: 7px 0;
   }
 }
 
@@ -197,12 +219,6 @@
   color: #ffffff;
   font-family: Arial;
   font-size: 15px;
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .custom-checkbox-circle > span {
-    font-size: 12px;
-  }
 }
 
 .custom-checkbox-circle > span::before {
@@ -274,8 +290,12 @@
 
 @media (max-width: 767.98px) {
   .custom-checkbox-image {
-    margin: 4px 0;
-    width: calc(100% / 4);
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin: 6px 12px 6px 0;
+    width: 55px;
+    padding: 0;
   }
 }
 
