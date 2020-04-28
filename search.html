@@ -14,6 +14,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
     <!--End Custom Scrollbar-->
 
+    <link type="text/css" href="scrollbar/OverlayScrollbars.css" rel="stylesheet"/>
+    <script type="text/javascript" src="scrollbar/OverlayScrollbars.js"></script>
+
     <title>Search Template</title>
 
     <link rel="stylesheet" href="styles/main.css">
@@ -25,14 +28,13 @@
         <div class="aside-temp"></div>
         <div class="search-players-wrapper">
             <div class="search-bar">
-                <form action="">
+            <form action="">
                 <div class="search-form__row js-toggle">
                     <label for="player_rating" class="search-form__label toggle-title js-toggle-title">Рейтинг</label>
                     <div class="toggle-body js-toggle-body">
                         <input type="text" id="player_rating" name="player_rating" value="" />
                     </div>
                 </div><!--.search-form__row-->
-
                 <div class="search-form__row js-toggle">
                     <label for="player_rating" class="search-form__label toggle-title js-toggle-title">Роль</label>
                     <div class="toggle-body js-toggle-body">
@@ -72,14 +74,12 @@
                     </div>
                     </div>
                 </div><!--.search-form__row-->
-
                 <div class="search-form__row js-toggle">
                     <label for="player_rating" class="search-form__label toggle-title js-toggle-title">Количество часов в игре</label>
                     <div class="toggle-body js-toggle-body">
                         <input type="text" id="player_hours" name="player_hours" value="" />
                     </div>
                 </div><!--.search-form__row-->
-
                 <div class="search-form__row js-toggle">
                     <label for="player_rating" class="search-form__label toggle-title js-toggle-title">Роль</label>
                     <div class="toggle-body js-toggle-body">
@@ -161,7 +161,7 @@
                 </div>
                 <div class="search-form__rules">
                     <label class="custom-checkbox-circle">
-                        <input type="checkbox" name="rules" value="indigo">
+                        <input type="checkbox" name="player_online" value="true">
                         <span>Искать только игроков онлайн</span>
                     </label>
                 </div>
@@ -172,14 +172,553 @@
                 </div>
             </form>
             </div><!--.search-bar-->
+            <div class="players-table">
+                <div class="players-table__row players-table__row_header">
+                    <div class="players-table__col players-table__nick">
+                        Игрок
+                    </div>
+                    <div class="toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                Рейтинг
+                            </div>
+                            <div class="players-table__col">
+                                Матчей
+                            </div>
+                            <div class="players-table__col">
+                                Побед
+                            </div>
+                            <div class="players-table__col">
+                                У/С
+                            </div>
+                            <div class="players-table__col">
+                                MVP
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                Роли
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                Симпатия
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="players-table__add-friend players-table__add-friend_title">Подать заявку</span>
+                            </div>
+                        </div><!--players-table__data-->
+                    </div>
+                </div>
+                <div class="players-table__row js-toggle">
+                    <div class="players-table__col players-table__nick toggle-title js-toggle-title">
+                        <img src="images/avatars/ava1.png" alt="" class="players-table__ava">
+                        <span>Rosario=DD #CS.MONEY</span>
+                    </div>
+                    <div class="toggle-body js-toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                <span class="only-mobile">Рейтинг:</span> 
+                                <span class="players-table__rating">70.45</span>
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Матчей:</span> 123
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Побед:</span> 72%
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">У/С:</span> 1.7
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">MVP:</span> 44.5
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                <span class="only-mobile">Роли:</span> 
+                                <span class="players-table__role">Поддержка</span>    
+                                <span class="players-table__role">Нападающий</span>
+                                <span class="players-table__role">+2</span>
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                <span class="only-mobile">Симпатия:</span> 
+                                <span class="players-table__like"><img src="images/icons/like.png"> 21</span>
+                                <span class="players-table__like"><img src="images/icons/dislike.png"> 7</span>
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="only-mobile">Пподать заявку:</span> 
+                                <a href="#" class="players-table__add-friend">Добавить в друзья</a>  
+                            </div>
+                        </div><!--players-table__data-->
+                    </div><!--toggle-body js-toggle-body-->
+                </div><!--players-table__row js-toggle-->
+
+                <!--dublicate-->
+                <div class="players-table__row js-toggle">
+                    <div class="players-table__col players-table__nick toggle-title js-toggle-title">
+                        <img src="images/avatars/ava1.png" alt="" class="players-table__ava">
+                        <span>Rosario=DD #CS.MONEY</span>
+                    </div>
+                    <div class="toggle-body js-toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                <span class="only-mobile">Рейтинг:</span> 
+                                <span class="players-table__rating">70.45</span>
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Матчей:</span> 123
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Побед:</span> 72%
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">У/С:</span> 1.7
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">MVP:</span> 44.5
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                <span class="only-mobile">Роли:</span> 
+                                <span class="players-table__role">Поддержка</span>    
+                                <span class="players-table__role">Нападающий</span>
+                                <span class="players-table__role">+2</span>
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                <span class="only-mobile">Симпатия:</span> 
+                                <span class="players-table__like"><img src="images/icons/like.png"> 21</span>
+                                <span class="players-table__like"><img src="images/icons/dislike.png"> 7</span>
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="only-mobile">Пподать заявку:</span> 
+                                <a href="#" class="players-table__add-friend">Добавить в друзья</a>  
+                            </div>
+                        </div><!--players-table__data-->
+                    </div><!--toggle-body js-toggle-body-->
+                </div><!--players-table__row js-toggle-->
+
+                <div class="players-table__row js-toggle">
+                    <div class="players-table__col players-table__nick toggle-title js-toggle-title">
+                        <img src="images/avatars/ava1.png" alt="" class="players-table__ava">
+                        <span>Rosario=DD #CS.MONEY</span>
+                    </div>
+                    <div class="toggle-body js-toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                <span class="only-mobile">Рейтинг:</span> 
+                                <span class="players-table__rating">70.45</span>
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Матчей:</span> 123
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Побед:</span> 72%
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">У/С:</span> 1.7
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">MVP:</span> 44.5
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                <span class="only-mobile">Роли:</span> 
+                                <span class="players-table__role">Поддержка</span>    
+                                <span class="players-table__role">Нападающий</span>
+                                <span class="players-table__role">+2</span>
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                <span class="only-mobile">Симпатия:</span> 
+                                <span class="players-table__like"><img src="images/icons/like.png"> 21</span>
+                                <span class="players-table__like"><img src="images/icons/dislike.png"> 7</span>
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="only-mobile">Пподать заявку:</span> 
+                                <a href="#" class="players-table__add-friend">Добавить в друзья</a>  
+                            </div>
+                        </div><!--players-table__data-->
+                    </div><!--toggle-body js-toggle-body-->
+                </div><!--players-table__row js-toggle-->
+
+                <div class="players-table__row js-toggle">
+                    <div class="players-table__col players-table__nick toggle-title js-toggle-title">
+                        <img src="images/avatars/ava1.png" alt="" class="players-table__ava">
+                        <span>Rosario=DD #CS.MONEY</span>
+                    </div>
+                    <div class="toggle-body js-toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                <span class="only-mobile">Рейтинг:</span> 
+                                <span class="players-table__rating">70.45</span>
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Матчей:</span> 123
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Побед:</span> 72%
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">У/С:</span> 1.7
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">MVP:</span> 44.5
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                <span class="only-mobile">Роли:</span> 
+                                <span class="players-table__role">Поддержка</span>    
+                                <span class="players-table__role">Нападающий</span>
+                                <span class="players-table__role">+2</span>
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                <span class="only-mobile">Симпатия:</span> 
+                                <span class="players-table__like"><img src="images/icons/like.png"> 21</span>
+                                <span class="players-table__like"><img src="images/icons/dislike.png"> 7</span>
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="only-mobile">Пподать заявку:</span> 
+                                <a href="#" class="players-table__add-friend">Добавить в друзья</a>  
+                            </div>
+                        </div><!--players-table__data-->
+                    </div><!--toggle-body js-toggle-body-->
+                </div><!--players-table__row js-toggle-->
+
+                <div class="players-table__row js-toggle">
+                    <div class="players-table__col players-table__nick toggle-title js-toggle-title">
+                        <img src="images/avatars/ava1.png" alt="" class="players-table__ava">
+                        <span>Rosario=DD #CS.MONEY</span>
+                    </div>
+                    <div class="toggle-body js-toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                <span class="only-mobile">Рейтинг:</span> 
+                                <span class="players-table__rating">70.45</span>
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Матчей:</span> 123
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Побед:</span> 72%
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">У/С:</span> 1.7
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">MVP:</span> 44.5
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                <span class="only-mobile">Роли:</span> 
+                                <span class="players-table__role">Поддержка</span>    
+                                <span class="players-table__role">Нападающий</span>
+                                <span class="players-table__role">+2</span>
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                <span class="only-mobile">Симпатия:</span> 
+                                <span class="players-table__like"><img src="images/icons/like.png"> 21</span>
+                                <span class="players-table__like"><img src="images/icons/dislike.png"> 7</span>
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="only-mobile">Пподать заявку:</span> 
+                                <a href="#" class="players-table__add-friend">Добавить в друзья</a>  
+                            </div>
+                        </div><!--players-table__data-->
+                    </div><!--toggle-body js-toggle-body-->
+                </div><!--players-table__row js-toggle-->
+
+                <div class="players-table__row js-toggle">
+                    <div class="players-table__col players-table__nick toggle-title js-toggle-title">
+                        <img src="images/avatars/ava1.png" alt="" class="players-table__ava">
+                        <span>Rosario=DD #CS.MONEY</span>
+                    </div>
+                    <div class="toggle-body js-toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                <span class="only-mobile">Рейтинг:</span> 
+                                <span class="players-table__rating">70.45</span>
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Матчей:</span> 123
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Побед:</span> 72%
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">У/С:</span> 1.7
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">MVP:</span> 44.5
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                <span class="only-mobile">Роли:</span> 
+                                <span class="players-table__role">Поддержка</span>    
+                                <span class="players-table__role">Нападающий</span>
+                                <span class="players-table__role">+2</span>
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                <span class="only-mobile">Симпатия:</span> 
+                                <span class="players-table__like"><img src="images/icons/like.png"> 21</span>
+                                <span class="players-table__like"><img src="images/icons/dislike.png"> 7</span>
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="only-mobile">Пподать заявку:</span> 
+                                <a href="#" class="players-table__add-friend">Добавить в друзья</a>  
+                            </div>
+                        </div><!--players-table__data-->
+                    </div><!--toggle-body js-toggle-body-->
+                </div><!--players-table__row js-toggle-->
+
+                <div class="players-table__row js-toggle">
+                    <div class="players-table__col players-table__nick toggle-title js-toggle-title">
+                        <img src="images/avatars/ava1.png" alt="" class="players-table__ava">
+                        <span>Rosario=DD #CS.MONEY</span>
+                    </div>
+                    <div class="toggle-body js-toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                <span class="only-mobile">Рейтинг:</span> 
+                                <span class="players-table__rating">70.45</span>
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Матчей:</span> 123
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Побед:</span> 72%
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">У/С:</span> 1.7
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">MVP:</span> 44.5
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                <span class="only-mobile">Роли:</span> 
+                                <span class="players-table__role">Поддержка</span>    
+                                <span class="players-table__role">Нападающий</span>
+                                <span class="players-table__role">+2</span>
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                <span class="only-mobile">Симпатия:</span> 
+                                <span class="players-table__like"><img src="images/icons/like.png"> 21</span>
+                                <span class="players-table__like"><img src="images/icons/dislike.png"> 7</span>
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="only-mobile">Пподать заявку:</span> 
+                                <a href="#" class="players-table__add-friend">Добавить в друзья</a>  
+                            </div>
+                        </div><!--players-table__data-->
+                    </div><!--toggle-body js-toggle-body-->
+                </div><!--players-table__row js-toggle-->
+
+                <div class="players-table__row js-toggle">
+                    <div class="players-table__col players-table__nick toggle-title js-toggle-title">
+                        <img src="images/avatars/ava1.png" alt="" class="players-table__ava">
+                        <span>Rosario=DD #CS.MONEY</span>
+                    </div>
+                    <div class="toggle-body js-toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                <span class="only-mobile">Рейтинг:</span> 
+                                <span class="players-table__rating">70.45</span>
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Матчей:</span> 123
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Побед:</span> 72%
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">У/С:</span> 1.7
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">MVP:</span> 44.5
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                <span class="only-mobile">Роли:</span> 
+                                <span class="players-table__role">Поддержка</span>    
+                                <span class="players-table__role">Нападающий</span>
+                                <span class="players-table__role">+2</span>
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                <span class="only-mobile">Симпатия:</span> 
+                                <span class="players-table__like"><img src="images/icons/like.png"> 21</span>
+                                <span class="players-table__like"><img src="images/icons/dislike.png"> 7</span>
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="only-mobile">Пподать заявку:</span> 
+                                <a href="#" class="players-table__add-friend">Добавить в друзья</a>  
+                            </div>
+                        </div><!--players-table__data-->
+                    </div><!--toggle-body js-toggle-body-->
+                </div><!--players-table__row js-toggle-->
+
+                <div class="players-table__row js-toggle">
+                    <div class="players-table__col players-table__nick toggle-title js-toggle-title">
+                        <img src="images/avatars/ava1.png" alt="" class="players-table__ava">
+                        <span>Rosario=DD #CS.MONEY</span>
+                    </div>
+                    <div class="toggle-body js-toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                <span class="only-mobile">Рейтинг:</span> 
+                                <span class="players-table__rating">70.45</span>
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Матчей:</span> 123
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Побед:</span> 72%
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">У/С:</span> 1.7
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">MVP:</span> 44.5
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                <span class="only-mobile">Роли:</span> 
+                                <span class="players-table__role">Поддержка</span>    
+                                <span class="players-table__role">Нападающий</span>
+                                <span class="players-table__role">+2</span>
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                <span class="only-mobile">Симпатия:</span> 
+                                <span class="players-table__like"><img src="images/icons/like.png"> 21</span>
+                                <span class="players-table__like"><img src="images/icons/dislike.png"> 7</span>
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="only-mobile">Пподать заявку:</span> 
+                                <a href="#" class="players-table__add-friend">Добавить в друзья</a>  
+                            </div>
+                        </div><!--players-table__data-->
+                    </div><!--toggle-body js-toggle-body-->
+                </div><!--players-table__row js-toggle-->
+
+                <div class="players-table__row js-toggle">
+                    <div class="players-table__col players-table__nick toggle-title js-toggle-title">
+                        <img src="images/avatars/ava1.png" alt="" class="players-table__ava">
+                        <span>Rosario=DD #CS.MONEY</span>
+                    </div>
+                    <div class="toggle-body js-toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                <span class="only-mobile">Рейтинг:</span> 
+                                <span class="players-table__rating">70.45</span>
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Матчей:</span> 123
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Побед:</span> 72%
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">У/С:</span> 1.7
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">MVP:</span> 44.5
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                <span class="only-mobile">Роли:</span> 
+                                <span class="players-table__role">Поддержка</span>    
+                                <span class="players-table__role">Нападающий</span>
+                                <span class="players-table__role">+2</span>
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                <span class="only-mobile">Симпатия:</span> 
+                                <span class="players-table__like"><img src="images/icons/like.png"> 21</span>
+                                <span class="players-table__like"><img src="images/icons/dislike.png"> 7</span>
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="only-mobile">Пподать заявку:</span> 
+                                <a href="#" class="players-table__add-friend">Добавить в друзья</a>  
+                            </div>
+                        </div><!--players-table__data-->
+                    </div><!--toggle-body js-toggle-body-->
+                </div><!--players-table__row js-toggle-->
+
+                <div class="players-table__row js-toggle">
+                    <div class="players-table__col players-table__nick toggle-title js-toggle-title">
+                        <img src="images/avatars/ava1.png" alt="" class="players-table__ava">
+                        <span>Rosario=DD #CS.MONEY</span>
+                    </div>
+                    <div class="toggle-body js-toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                <span class="only-mobile">Рейтинг:</span> 
+                                <span class="players-table__rating">70.45</span>
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Матчей:</span> 123
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Побед:</span> 72%
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">У/С:</span> 1.7
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">MVP:</span> 44.5
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                <span class="only-mobile">Роли:</span> 
+                                <span class="players-table__role">Поддержка</span>    
+                                <span class="players-table__role">Нападающий</span>
+                                <span class="players-table__role">+2</span>
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                <span class="only-mobile">Симпатия:</span> 
+                                <span class="players-table__like"><img src="images/icons/like.png"> 21</span>
+                                <span class="players-table__like"><img src="images/icons/dislike.png"> 7</span>
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="only-mobile">Пподать заявку:</span> 
+                                <a href="#" class="players-table__add-friend">Добавить в друзья</a>  
+                            </div>
+                        </div><!--players-table__data-->
+                    </div><!--toggle-body js-toggle-body-->
+                </div><!--players-table__row js-toggle-->
+
+                <div class="players-table__row js-toggle">
+                    <div class="players-table__col players-table__nick toggle-title js-toggle-title">
+                        <img src="images/avatars/ava1.png" alt="" class="players-table__ava">
+                        <span>Rosario=DD #CS.MONEY</span>
+                    </div>
+                    <div class="toggle-body js-toggle-body">
+                        <div class="players-table__data">
+                            <div class="players-table__col">
+                                <span class="only-mobile">Рейтинг:</span> 
+                                <span class="players-table__rating">70.45</span>
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Матчей:</span> 123
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">Побед:</span> 72%
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">У/С:</span> 1.7
+                            </div>
+                            <div class="players-table__col">
+                                <span class="only-mobile">MVP:</span> 44.5
+                            </div>
+                            <div class="players-table__col players-table__col_role-wrap">
+                                <span class="only-mobile">Роли:</span> 
+                                <span class="players-table__role">Поддержка</span>    
+                                <span class="players-table__role">Нападающий</span>
+                                <span class="players-table__role">+2</span>
+                            </div>
+                            <div class="players-table__col players-table__col_like">
+                                <span class="only-mobile">Симпатия:</span> 
+                                <span class="players-table__like"><img src="images/icons/like.png"> 21</span>
+                                <span class="players-table__like"><img src="images/icons/dislike.png"> 7</span>
+                            </div>
+                            <div class="players-table__col players-table__col_friend">
+                                <span class="only-mobile">Пподать заявку:</span> 
+                                <a href="#" class="players-table__add-friend">Добавить в друзья</a>  
+                            </div>
+                        </div><!--players-table__data-->
+                    </div><!--toggle-body js-toggle-body-->
+                </div><!--players-table__row js-toggle-->
+            </div>
         </div><!--.search-players-wrapper-->
     </div><!--container-->
-
+    
     <script>
         $(document).ready(function() {
             var toggleOn = false;
             function hideContentOnMobile() {
-                if ($(window).width() < '768') {
+                if ($(window).width() <= '1024') {
                     if (!toggleOn) {
                         $('.js-toggle-title').on('click',function() {
                             $(this).parents('.js-toggle').find('.js-toggle-body').slideToggle(300);

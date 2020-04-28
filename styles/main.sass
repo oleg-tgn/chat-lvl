@@ -20,6 +20,9 @@ body
 .container
   padding: 0 20px 0 110px;
 
+  @media #{$tablet}
+    padding: 0 20px 0 60px;
+
   @media #{$mobile}
     padding: 0 10px 0 45px;
 
@@ -30,6 +33,9 @@ body
   height: 100px;
   box-sizing: border-box
   
+  @media #{$tablet}
+    height: 70px;
+
   @media #{$mobile}
     height: 40px;
 
@@ -41,6 +47,10 @@ body
   bottom: 0;
   width: 90px;
   border-right: 1px solid #1f2227;
+
+  @media #{$tablet}
+    top: 70px;
+    width: 60px;
 
   @media #{$mobile}
     top: 40px;

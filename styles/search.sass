@@ -12,8 +12,10 @@ $color_grey4: #454950
 $color_grey5: #8c8f95
 
 $mobile: "(max-width: 767.98px)"
-$tablet: "(min-width: 768px) and (max-width: 991.98px)"
-$desktop: "(min-width: 992px)"
+$mobileAndTablet: "(max-width: 1024px)"
+$tablet: "(min-width: 768px) and (max-width: 1024px)"
+$desktop: "(min-width: 1025px)"
+$laptop: "(min-width: 1025px) and (max-width: 1400px)"
 
 /*Custom Range Slider*/
 .irs-min,
@@ -53,13 +55,27 @@ $desktop: "(min-width: 992px)"
 
 .search-players-wrapper
   padding: 25px
+  display: flex
+  flex-direction: row
+
+  @media #{$laptop}
+    padding: 25px 10px
+
+  @media #{$mobile}
+    flex-direction: column
 
 .search-bar
-  width: 30%
-  max-width: 372px
+  width: 375px
+
+  @media #{$laptop}
+    width: 250px
+  
+  @media #{$tablet}
+    width: 30%
 
   @media #{$mobile}
     width: 100%
+    max-width: 100%
 
 .search-form
   &__row
@@ -67,7 +83,7 @@ $desktop: "(min-width: 992px)"
     border-bottom: 1px solid #2d2e33
     padding: 15px 0 0 0
 
-    @media #{$mobile}
+    @media #{$mobileAndTablet}
       padding: 5px 0
 
   &__rules
@@ -82,10 +98,13 @@ $desktop: "(min-width: 992px)"
     font-size: 15px
     font-weight: 400
     
-    @media #{$mobile}
+    @media #{$mobileAndTablet}
       display: block
       height: 30px
       line-height: 30px
+
+    @media #{$tablet}
+      font-size: 12px
 
   &__button
     border: 0
@@ -174,6 +193,12 @@ $desktop: "(min-width: 992px)"
     font-family: Arial 
     font-size: 15px
 
+    @media #{$laptop}
+      font-size: 13px
+
+    @media #{$tablet}
+      font-size: 13px
+
   & > span::before
     content: ''
     display: inline-block
@@ -247,8 +272,8 @@ $desktop: "(min-width: 992px)"
     left: 0
     background: linear-gradient(to top, rgba(153, 77, 155, 1), rgba(153, 77, 155, 0))
 
-/*this class toggle elements on on mobile*/
-@media #{$mobile}
+/*this class toggle elements on mobile and tablet*/
+@media #{$mobileAndTablet}
   .toggle-body 
       display: none
 
@@ -273,4 +298,145 @@ $desktop: "(min-width: 992px)"
 
     &.open:before
       transform: rotate(180deg)
-        
+
+.only-mobile
+  display: none
+
+  @media #{$mobile} 
+    display: inline-block
+
+.players-table
+  color: #ffffff
+  font-size: 14px
+  font-family: Arial
+  width: calc(100% - 400px)
+  background-color: #202328
+  margin-left: 25px
+
+  @media #{$laptop}
+    width: calc(100% - 275px) 
+    font-size: 12px
+
+  @media #{$mobileAndTablet}
+    width: 100%
+    margin-left: 0
+
+  &__row
+    display: flex
+    flex-direction: row
+    border-bottom: 1px solid #2d2e33
+    padding: 0 40px
+   
+    @media #{$laptop}
+      padding: 0 15px
+
+    @media #{$mobileAndTablet}
+      flex-direction: column
+
+    &_header
+      background: #111419
+
+      @media #{$mobileAndTablet}
+        display: none
+
+  &__col
+    width: 100px
+    padding: 20px 0
+    display: flex
+    align-items: center
+    justify-content: center
+
+    &_friend
+      width: 140px
+
+    &_like
+      width: 130px
+
+    &_role-wrap
+      width: 134px
+      flex-wrap: wrap
+
+  .toggle-body
+    width: 80%
+    
+    @media #{$mobile}
+      width: 100%
+
+  &__ava
+    width: 35px
+    height: 35px
+    margin-right: 30px
+
+    @media #{$laptop}
+      margin-right: 15px
+
+  &__rating
+    color: #d99f31
+
+  &__role
+    display: inline-block
+    padding: 5px 9px
+    margin: 2px
+    background: #181b1f
+    border-radius: 11px
+    font-size: 12px
+    font-weight: 400
+
+    @media #{$laptop}
+      font-size: 11px
+
+  &__nick
+    width: 230px
+    text-align: left
+    justify-content: left
+
+    @media #{$mobileAndTablet}
+      width: 100%
+
+  &__data
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    @media #{$mobileAndTablet}
+      flex-direction: column
+
+  &__like
+    margin: 0 7px
+
+    @media #{$laptop}
+      margin: 0 2px
+
+    img
+      width: 17px
+      height: 17px
+  
+  &__add-friend
+    width: 131px
+    height: 31px
+    line-height: 31px
+    border-radius: 15px
+    text-align: center
+    border: 2px solid #2d2e33
+    color: #8b8b8b
+    font-family: Arial
+    font-size: 11px
+    font-weight: 400
+    text-decoration: none
+
+    @media #{$laptop}
+      width: 110px
+      height: 25px
+      line-height: 25px
+      font-size: 10px
+
+    &:hover
+      background-color: #1a1d22
+
+    &_title
+      border: 2px solid #d99f31
+      color: #d99f31
+      text-transform: uppercase
+
+      &:hover
+        background-color: inherit

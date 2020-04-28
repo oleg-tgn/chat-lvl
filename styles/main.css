@@ -24,6 +24,12 @@ body {
   padding: 0 20px 0 110px;
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    padding: 0 20px 0 60px;
+  }
+}
+
 @media (max-width: 767.98px) {
   .container {
     padding: 0 10px 0 45px;
@@ -37,6 +43,12 @@ body {
   height: 100px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .header-temp {
+    height: 70px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -53,6 +65,13 @@ body {
   bottom: 0;
   width: 90px;
   border-right: 1px solid #1f2227;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .aside-temp {
+    top: 70px;
+    width: 60px;
+  }
 }
 
 @media (max-width: 767.98px) {
