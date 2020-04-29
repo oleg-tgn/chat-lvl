@@ -421,7 +421,7 @@
   display: none;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 1024px) {
   .only-mobile {
     display: inline-block;
   }
@@ -443,15 +443,17 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .players-table {
-    width: 100%;
-    margin-left: 0;
+    margin-left: 25px;
+    width: calc(70% - 25px);
   }
 }
 
 @media (max-width: 767.98px) {
   .players-table {
+    width: 100%;
+    margin-left: 0;
     margin-top: 15px;
   }
 }
@@ -508,7 +510,7 @@
           justify-content: center;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 1024px) {
   .players-table__col {
     width: 100% !important;
     -webkit-box-pack: left;

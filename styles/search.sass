@@ -307,7 +307,7 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
 .only-mobile
   display: none
 
-  @media #{$mobile} 
+  @media #{$mobileAndTablet} 
     display: inline-block
 
 .players-table
@@ -322,11 +322,13 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
     width: calc(100% - 275px) 
     font-size: 12px
 
-  @media #{$mobileAndTablet}
-    width: 100%
-    margin-left: 0
+  @media #{$tablet}
+    margin-left: 25px
+    width: calc(70% - 25px) 
 
   @media #{$mobile}
+    width: 100%
+    margin-left: 0
     margin-top: 15px
 
   &__row
@@ -355,7 +357,7 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
     align-items: center
     justify-content: center
 
-    @media #{$mobile}
+    @media #{$mobileAndTablet}
       width: 100% !important
       justify-content: left
       padding: 5px 0
