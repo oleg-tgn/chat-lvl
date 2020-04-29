@@ -14,6 +14,7 @@ section, div, li
 
 img 
   max-width: 100%
+
 body 
   position: relative
   
@@ -55,3 +56,50 @@ body
   @media #{$mobile}
     top: 40px;
     width: 35px;
+
+.tooltip
+  position: relative
+  display: inline-block
+  font-size: 0
+  cursor: pointer
+
+  @media #{$mobile}
+    margin: 0 10px
+
+  &:hover .tooltiptext 
+    visibility: visible
+
+  .tooltip
+    margin: 0
+    
+  .tooltiptext 
+    visibility: hidden
+    background-color: #000000
+    color: #fff
+    text-align: center
+    padding: 5px 0
+    border-radius: 12px
+    position: absolute
+    z-index: 1
+    text-decoration: none
+    font-family: Arial
+    font-size: 12px
+    font-weight: 400
+    width: 100px
+    top: 19px
+    left: 50%
+    transform: translateX(-50%)
+
+    @media #{$mobile}
+      width: 85px
+      font-size: 10px
+
+    &::after 
+      content: ""
+      position: absolute
+      bottom: 100%
+      left: 50%
+      transform: translateX(-50%)
+      border-width: 5px
+      border-style: solid
+      border-color: transparent transparent #000000 transparent

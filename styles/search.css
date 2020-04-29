@@ -108,6 +108,7 @@
 
 .search-form__rules {
   margin: 25px 0;
+  text-align: center;
 }
 
 @media (max-width: 767.98px) {
@@ -449,6 +450,12 @@
   }
 }
 
+@media (max-width: 767.98px) {
+  .players-table {
+    margin-top: 15px;
+  }
+}
+
 .players-table__row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -536,6 +543,15 @@
   .players-table .toggle-body {
     width: 100%;
   }
+}
+
+.players-table .tooltiptext {
+  top: 29px;
+  background: #434547;
+}
+
+.players-table .tooltiptext::after {
+  border-color: transparent transparent #434547 transparent;
 }
 
 .players-table__ava {

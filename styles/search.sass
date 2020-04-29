@@ -89,6 +89,7 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
 
   &__rules
     margin: 25px 0
+    text-align: center
 
     @media #{$mobile}
       margin: 15px 0
@@ -325,6 +326,9 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
     width: 100%
     margin-left: 0
 
+  @media #{$mobile}
+    margin-top: 15px
+
   &__row
     display: flex
     flex-direction: row
@@ -374,6 +378,12 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
     
     @media #{$mobile}
       width: 100%
+
+  .tooltiptext
+    top: 29px
+    background: #434547
+    &::after 
+      border-color: transparent transparent #434547 transparent
 
   &__ava
     width: 35px

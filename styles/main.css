@@ -80,4 +80,64 @@ body {
     width: 35px;
   }
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 767.98px) {
+  .tooltip {
+    margin: 0 10px;
+  }
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .tooltip {
+  margin: 0;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 12px;
+  position: absolute;
+  z-index: 1;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: 400;
+  width: 100px;
+  top: 19px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media (max-width: 767.98px) {
+  .tooltip .tooltiptext {
+    width: 85px;
+    font-size: 10px;
+  }
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #000000 transparent;
+}
 /*# sourceMappingURL=main.css.map */
