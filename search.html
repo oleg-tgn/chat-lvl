@@ -14,8 +14,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
     <!--End Custom Scrollbar-->
 
-    <link type="text/css" href="scrollbar/OverlayScrollbars.css" rel="stylesheet"/>
-    <script type="text/javascript" src="scrollbar/OverlayScrollbars.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
     <title>Search Template</title>
 
@@ -199,11 +199,14 @@
                             </div>
                             <div class="players-table__col players-table__col_like">
                                 Симпатия
-                            </div>
+                            </div>     
                             <div class="players-table__col players-table__col_friend">
-                                <span class="players-table__add-friend players-table__add-friend_title">Подать заявку</span>
-                            </div>
+                                <a href="#ex1" rel="modal:open" class="players-table__add-friend players-table__add-friend_title js-open-modal">Подать заявку</a>
+                            </div>                       
                         </div><!--players-table__data-->
+                    </div>
+                    <div class="players-table__col players-table__col_friend only-mobile">
+                        <a href="#ex1" rel="modal:open" class="players-table__add-friend players-table__add-friend_title js-open-modal">Подать заявку</a>
                     </div>
                 </div>
                 <div class="players-table__row js-toggle">
@@ -772,6 +775,134 @@
                 </div><!--players-table__row js-toggle-->
             </div>
         </div><!--.search-players-wrapper-->
+
+
+        <div id="ex1" class="modal modal-form">
+            <form action="">
+                <label class="modal-form__title">Подача заявки</label>
+                <div class="search-form__row">                    
+                    <label for="player_rating" class="search-form__label">Роль</label>
+                    <div class="checkbox-wrap">
+                        <label class="custom-checkbox-circle">
+                            <input type="checkbox" name="player_role" value="Снайпер">
+                            <span>Снайпер</span>
+                        </label>
+                        <label class="custom-checkbox-circle">
+                            <input type="checkbox" name="player_role" value="Поддержка">
+                            <span>Поддержка</span>
+                        </label>
+                        <label class="custom-checkbox-circle">
+                            <input type="checkbox" name="player_role" value="Энтри фрагер">
+                            <span>Энтри фрагер</span>
+                        </label>
+                        <label class="custom-checkbox-circle">
+                            <input type="checkbox" name="player_role" value="Люркер">
+                            <span>Люркер</span>
+                        </label>
+                        <label class="custom-checkbox-circle">
+                            <input type="checkbox" name="player_role" value="Капитан">
+                            <span>Капитан</span>
+                        </label>
+                        <label class="custom-checkbox-circle">
+                            <input type="checkbox" name="player_role" value="Тренер">
+                            <span>Тренер</span>
+                        </label>
+                        <label class="custom-checkbox-circle">
+                            <input type="checkbox" name="player_role" value="Менеджер">
+                            <span>Менеджер</span>
+                        </label>
+                        <label class="custom-checkbox-circle">
+                            <input type="checkbox" name="player_role" value="Аналитик">
+                            <span>Аналитик</span>
+                        </label>
+                    </div>
+                </div><!--.search-form__row-->
+                <div class="search-form__row">
+                    <label for="player_rating" class="search-form__label">Количество часов в игре</label>
+                    <input type="text" id="new_player_hours" name="new_player_hours" value="" />
+                </div><!--.search-form__row-->
+                <div class="search-form__row">
+                    <label for="player_rating" class="search-form__label">Роль</label>
+                        <div class="checkbox-images-wrap">
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-1">
+                                <span><img src="images/rangs/rang-1.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-2">
+                                <span><img src="images/rangs/rang-2.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-3">
+                                <span><img src="images/rangs/rang-3.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-4">
+                                <span><img src="images/rangs/rang-4.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-5">
+                                <span><img src="images/rangs/rang-5.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-6">
+                                <span><img src="images/rangs/rang-6.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-7">
+                                <span><img src="images/rangs/rang-7.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-8">
+                                <span><img src="images/rangs/rang-8.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-9">
+                                <span><img src="images/rangs/rang-9.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-10">
+                                <span><img src="images/rangs/rang-10.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-11">
+                                <span><img src="images/rangs/rang-11.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-12">
+                                <span><img src="images/rangs/rang-12.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-13">
+                                <span><img src="images/rangs/rang-13.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-14">
+                                <span><img src="images/rangs/rang-14.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-15">
+                                <span><img src="images/rangs/rang-15.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-16">
+                                <span><img src="images/rangs/rang-16.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-17">
+                                <span><img src="images/rangs/rang-17.jpg"></span>
+                            </label>
+                            <label class="custom-checkbox-image">
+                                <input type="radio" name="player_rang" value="rang-18">
+                                <span><img src="images/rangs/rang-18.jpg"></span>
+                            </label>
+                        </div>
+                    </div>
+                <div class="search-form__rules">
+                    <button class="search-form__button">Подать</button>
+                </div>
+            </form>
+        </div>
     </div><!--container-->
     
     <script>
@@ -806,6 +937,17 @@
             player_rating.reset();
             player_hours.reset();
         })        
+
+        $(".js-open-modal").on("click", function() {
+            $("#new_player_hours").ionRangeSlider({
+                skin: "round",
+                min: 0,
+                max: 500,
+                from: 388,
+                prefix: "от ",
+                postfix: " часов"
+            });
+        }) 
 
         $("#player_rating").ionRangeSlider({
             skin: "round",

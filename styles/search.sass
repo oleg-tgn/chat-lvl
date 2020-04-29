@@ -179,7 +179,6 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
 
   @media #{$tablet}
     margin: 3px 0
-    width: 100%
   
   @media #{$mobile}
     width: 50%
@@ -250,7 +249,7 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
 
   @media #{$tablet}
     margin: 4px 0
-    width: calc(100% / 3)
+    width: 63px
   
   @media #{$mobile}
     display: inline-flex
@@ -305,7 +304,8 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
       transform: rotate(180deg)
 
 .only-mobile
-  display: none
+  @media #{$desktop} 
+    display: none !important
 
   @media #{$mobileAndTablet} 
     display: inline-block
@@ -346,9 +346,13 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
 
     &_header
       background: #111419
-
+      align-items: center
+      
       @media #{$mobileAndTablet}
-        display: none
+        flex-direction: row
+
+        .players-table__data
+          display: none
 
   &__col
     width: 100px
@@ -367,6 +371,9 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
 
     &_friend
       width: 140px
+
+      @media #{$mobileAndTablet}
+        width: 140px !important
 
     &_like
       width: 130px
@@ -473,3 +480,31 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
 
       &:hover
         background-color: inherit
+
+.modal-form 
+  background: #181b20
+  border-radius: 25px
+
+  @media #{$mobile}
+    padding: 15px 15px
+
+  &__title
+    display: block
+    color: #6b6c6c
+    font-family: Arial
+    font-size: 17px
+    margin-bottom: 10px
+
+  a.close-modal
+    width: 20px
+    height: 20px
+    top: 15px
+    right: 15px
+    background-image: url(../images/icons/close-btn.png)
+
+  .search-form__button
+    margin-top: 0
+    margin-bottom: 0
+
+.blocker
+  z-index: 3
