@@ -63,6 +63,7 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
 
   @media #{$mobile}
     flex-direction: column
+    padding: 25px 10px
 
 .search-bar
   width: 375px
@@ -127,10 +128,10 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
       margin: 15px auto
 
     @media #{$mobile}
-      width: 130px
+      width: 110px
       height: 30px
       font-size: 13px
-      margin: 0 15px
+      margin: 0 15px 0 0
 
     &:hover 
       background-color: rgba(112, 81, 178, 0.5)
@@ -152,6 +153,9 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
     @media #{$tablet}
       display: block
       margin: 0 auto
+
+    @media #{$mobile}
+      width: 80px
 
     &:hover 
       background-color: rgba(0, 0, 0, 0.5)
@@ -332,6 +336,7 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
 
     @media #{$mobileAndTablet}
       flex-direction: column
+      padding: 0 15px
 
     &_header
       background: #111419
@@ -345,6 +350,14 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
     display: flex
     align-items: center
     justify-content: center
+
+    @media #{$mobile}
+      width: 100% !important
+      justify-content: left
+      padding: 5px 0
+
+      .only-mobile
+        margin-right: 5px
 
     &_friend
       width: 140px
@@ -369,6 +382,9 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
 
     @media #{$laptop}
       margin-right: 15px
+    
+    @media #{$mobileAndTablet}
+      margin-right: 10px
 
   &__rating
     color: #d99f31
@@ -393,6 +409,10 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
     @media #{$mobileAndTablet}
       width: 100%
 
+    @media #{$mobile}
+      padding: 10px 0
+      padding-right: 20px
+
   &__data
     display: flex
     flex-direction: row
@@ -400,6 +420,7 @@ $laptop: "(min-width: 1025px) and (max-width: 1400px)"
 
     @media #{$mobileAndTablet}
       flex-direction: column
+      padding: 10px 0
 
   &__like
     margin: 0 7px

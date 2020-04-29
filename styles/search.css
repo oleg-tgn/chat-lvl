@@ -67,6 +67,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding: 25px 10px;
   }
 }
 
@@ -163,10 +164,10 @@
 
 @media (max-width: 767.98px) {
   .search-form__button {
-    width: 130px;
+    width: 110px;
     height: 30px;
     font-size: 13px;
-    margin: 0 15px;
+    margin: 0 15px 0 0;
   }
 }
 
@@ -193,6 +194,12 @@
   .search-form__clear {
     display: block;
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .search-form__clear {
+    width: 80px;
   }
 }
 
@@ -466,6 +473,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding: 0 15px;
   }
 }
 
@@ -491,6 +499,19 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 767.98px) {
+  .players-table__col {
+    width: 100% !important;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    padding: 5px 0;
+  }
+  .players-table__col .only-mobile {
+    margin-right: 5px;
+  }
 }
 
 .players-table__col_friend {
@@ -529,6 +550,12 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .players-table__ava {
+    margin-right: 10px;
+  }
+}
+
 .players-table__rating {
   color: #d99f31;
 }
@@ -563,6 +590,13 @@
   }
 }
 
+@media (max-width: 767.98px) {
+  .players-table__nick {
+    padding: 10px 0;
+    padding-right: 20px;
+  }
+}
+
 .players-table__data {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -582,6 +616,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding: 10px 0;
   }
 }
 
