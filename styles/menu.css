@@ -1,0 +1,27 @@
+.nav {
+  font-family: Arial;
+  padding: 40px 100px;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.nav__item {
+  margin-right: 50px;
+}
+
+.nav__link {
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  transition: color .3s ease;
+}
+
+.nav__link.active,
+.nav__link:hover {
+  color: #d99f31;
+}
+  

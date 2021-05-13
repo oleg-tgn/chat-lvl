@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +12,17 @@
     <title>Chat Template</title>
 
     <link rel="stylesheet" href="styles/chat.css">
+    <link rel="stylesheet" href="styles/menu.css">
 </head>
 <body>
-    <header class="header-temp"></header>
+    <header class="header-temp">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link active" href="chat.html">Чат игроков</a></li>
+                <li class="nav__item"><a class="nav__link" href="search.html">Поиск игроков</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
     <div class="aside-temp"></div>
     <section class="chat-wrapper">
@@ -30,7 +38,7 @@
                     </span>
                 </div>
                 <div class="chat-tabs__list js-scarollbar">
-                    <a href="#" class="chat-tabs__tab">
+                    <a href="chat_messages.html" class="chat-tabs__tab">
                         <span class="chat-tabs__avatar online">
                             <img src="images/avatars/ava1.png" alt="">
                         </span>
@@ -38,7 +46,7 @@
                             Rosario=DD #CS.MONEY
                         </span>
                     </a>
-                    <a href="#" class="chat-tabs__tab new_message">
+                    <a href="chat_messages.html" class="chat-tabs__tab new_message">
                         <span class="chat-tabs__avatar online">
                             <img src="images/avatars/ava2.png" alt="">
                         </span>
